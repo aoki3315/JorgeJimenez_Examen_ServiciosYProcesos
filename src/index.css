@@ -1,0 +1,122 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Evolution Mobility Clean & Depth Design System */
+
+@layer base {
+  :root {
+    /* Fondo principal: Un gris muy, muy claro (slate-50) en vez de blanco puro */
+    --background: 210 40% 98%;
+    /* Texto: Un azul marino/carbón oscuro en vez de negro puro (slate-800) */
+    --foreground: 222 47% 15%;
+
+    /* Tarjetas: Blanco puro para que destaquen sobre el fondo grisáceo */
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 15%;
+    --card-glass: 0 0% 100%;
+
+    /* Popover styling */
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 15%;
+
+    /* Logo blue primary - "azul clarito" */
+    --primary: 200 95% 50%; /* Light bright blue */
+    --primary-foreground: 0 0% 100%; /* White text on blue */
+    --primary-glow: 200 95% 45%; /* Hover state */
+
+    /* Muted tones (Backgrounds para secciones alternativas y textos secundarios) */
+    --muted: 210 40% 94%; /* Un gris-azul ligeramente más notorio para separar secciones (slate-100) */
+    --muted-foreground: 215 16% 47%; /* Slate-500 para textos secundarios */
+
+    /* Accent colors */
+    --accent: 200 95% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    /* Destructive */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Borders: Gris claro pero visible */
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 200 95% 50%;
+
+    /* Sombras más grandes y muy suaves para dar profundidad al blanco */
+    --shadow-elegant: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+    --shadow-card: 0 4px 15px -3px rgba(0,0,0,0.03);
+
+    /* Assertive transitions */
+    --transition-smooth: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    /* Esquinas apenas redondeadas (0.25rem) para no ser un bloque 100% rudo de los años 90 */
+    --radius: 0rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 210 40% 98%;
+    --foreground: 222 47% 15%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 15%;
+    --card-glass: 0 0% 100%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 15%;
+    --primary: 200 95% 50%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 90%;
+    --secondary-foreground: 0 0% 10%;
+    --muted: 210 40% 94%;
+    --muted-foreground: 215 16% 47%;
+    --accent: 200 95% 50%;
+    --accent-foreground: 0 0% 100%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 200 95% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    background: var(--background);
+    min-height: 100vh;
+  }
+
+  .glass {
+    @apply bg-card border border-border;
+  }
+
+  .glass-card {
+    @apply bg-card border border-border rounded-md;
+    box-shadow: var(--shadow-card);
+  }
+
+  .hover-lift {
+    transition: var(--transition-smooth);
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-elegant);
+    @apply border-primary/40;
+  }
+
+  .gradient-text {
+    @apply text-foreground;
+    background: none;
+    -webkit-text-fill-color: initial;
+  }
+}

@@ -1,0 +1,18 @@
+# Node / Vite
+node_modules
+dist
+
+# Python
+.venv
+__pycache__/
+*.pyc
+
+# Base de datos local
+evolution.db
+
+# Subidas locales
+uploads
+
+# Otros
+.DS_Store
+bun.lockb

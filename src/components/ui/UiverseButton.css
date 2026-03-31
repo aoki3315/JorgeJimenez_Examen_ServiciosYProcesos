@@ -1,0 +1,86 @@
+/* src/components/ui/UiverseButton.css */
+/* From Uiverse.io by satyamchaudharydev */ 
+.uiverse-btn {
+  width: 140px;
+  height: 56px;
+  overflow: hidden;
+  border: none;
+  background: none;
+  position: relative;
+  padding-bottom: 2em;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.uiverse-btn > div,
+.uiverse-btn > svg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.uiverse-btn:before {
+  content: "";
+  position: absolute;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  background: currentColor;
+  transition: transform 0.25s ease-out;
+}
+
+.uiverse-btn:hover:before,
+.uiverse-btn.active:before {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.uiverse-btn .clone > *,
+.uiverse-btn .text > * {
+  opacity: 1;
+  font-size: 1.1rem;
+  font-weight: bold;
+  transition: 0.2s;
+  margin-left: 2px;
+  text-transform: uppercase;
+}
+
+.uiverse-btn .clone > * {
+  transform: translateY(60px);
+}
+
+.uiverse-btn:hover .clone > *,
+.uiverse-btn.active .clone > * {
+  opacity: 1;
+  transform: translateY(0px);
+  transition: all 0.2s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+}
+
+.uiverse-btn:hover .text > *,
+.uiverse-btn.active .text > * {
+  opacity: 1;
+  transform: translateY(-60px);
+  transition: all 0.2s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+}
+
+/* icon style and hover */
+.uiverse-btn svg {
+  width: 20px;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%) rotate(-50deg);
+  transition: 0.2s ease-out;
+  position: absolute;
+}
+
+.uiverse-btn:hover svg,
+.uiverse-btn.active svg {
+  transform: translateY(-50%) rotate(-90deg);
+}
